@@ -36,20 +36,21 @@
 
 ### Association
 
+- belongs_to :user
 - has_one :buy
 
 
 ## buys テーブル
 
-| Column   | Type       | Options               |
-| -------- | ---------- | --------------------- |
-| user_id  | references | null: false, FK: true |
-| item_id  | references | null: false, FK: true |
+| Column | Type       | Options               |
+| ------ | ---------- | --------------------- |
+| user   | references | null: false, FK: true |
+| item   | references | null: false, FK: true |
 
 ### Association
 
 - belongs_to :user
-- has_one :addresses dependent: :destroy
+- has_one :address dependent: :destroy
 - belongs_to :item dependent: :destroy
 
 
