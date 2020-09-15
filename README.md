@@ -22,23 +22,21 @@
 
 ## items テーブル
 
-| Column          | Type       | Options               |
-| --------------- | ---------- | --------------------- |
-| category_id     | integer    | null: false           |
-| delivery_fee    | integer    | null: false           |
-| user_id         | integer    | null: false, FK: true |
-| name            | string     | null: false           |
-| text            | text       | null: false           |
-| condition       | integer    | null: false           |
-| price           | integer    | null: false           |
-| shipping_area   | integer    | null: false           |
-| shipping_day    | integer    | null: false           |
+| Column           | Type       | Options               |
+| ---------------- | ---------- | --------------------- |
+| category_id      | integer    | null: false           |
+| delivery_fee_id  | integer    | null: false           |
+| user_id          | integer    | null: false, FK: true |
+| name             | string     | null: false           |
+| text             | text       | null: false           |
+| condition_id     | integer    | null: false           |
+| price            | integer    | null: false           |
+| shipping_area_id | integer    | null: false           |
+| shipping_day_id  | integer    | null: false           |
 
 ### Association
 
-- belongs_to :user
 - has_one :buy
-- has_one :address dependent: :destroy
 
 
 ## buys テーブル
@@ -57,16 +55,16 @@
 
 ## addresses テーブル
 
-| Column     | Type       | Options                   |
-| ---------- | ---------- | ------------------------- |
-| buy_id     | integer    | null: false, FK:true      |
-| zip_code   | integer    | null: false               |
-| prefecture | integer    | null: false               |
-| city       | string     | null: false               |
-| address    | string     | null: false               |
-| building   | string     |                           |
-| telephone  | string     | null: false, unique: true |
+| Column        | Type       | Options              |
+| ------------- | ---------- | -------------------- |
+| buy_id        | integer    | null: false, FK:true |
+| zip_code      | string     | null: false          |
+| prefecture_id | integer    | null: false          |
+| city          | string     | null: false          |
+| address       | string     | null: false          |
+| building      | string     |                      |
+| telephone     | string     | null: false          |
 
 ### Association
 
-- has_one :buy dependent: :destroy
+- belongs_to :buy dependent: :destroy
