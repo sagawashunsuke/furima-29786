@@ -68,6 +68,36 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Price is not included in the list")
       end
+      it "priceが10,000,000以上だと登録できないこと" do
+        @item.price = "10000000"
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Price is not included in the list")
+      end
+      it "genre_idが--を示すid値(1)だと出品登録できない" do
+        @item.genre_id = "1"
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Genre must be other than 1")
+      end
+      it "status_idが--を示すid値(1)だと出品登録できない" do
+        @item.status_id = "1"
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Status must be other than 1")
+      end
+      it "delivery_fee_idが--を示すid値(1)だと出品登録できない" do
+        @item.delivery_fee_id = "1"
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Delivery fee must be other than 1")
+      end
+      it "shipping_area_idが--を示すid値(1)だと出品登録できない" do
+        @item.shipping_area_id = "1"
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Shipping area must be other than 1")
+      end
+      it "shipping_day_idが--を示すid値(1)だと出品登録できない" do
+        @item.shipping_day_id = "1"
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Shipping day must be other than 1")
+      end
     end
   end
 end
