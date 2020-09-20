@@ -18,9 +18,9 @@ class ItemsController < ApplicationController
     end
   end
 
-  # def show
-  #   @item = Item.find(params[:id])
-  # end
+  def show
+    @item = Item.find(params[:id])
+  end
 
   def move_to_index
     unless user_signed_in?
