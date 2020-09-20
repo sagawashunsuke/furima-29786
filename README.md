@@ -29,7 +29,7 @@
 | user_id          | integer    | null: false, FK: true |
 | name             | string     | null: false           |
 | text             | text       | null: false           |
-| condition_id     | integer    | null: false           |
+| status_id        | integer    | null: false           |
 | price            | integer    | null: false           |
 | shipping_area_id | integer    | null: false           |
 | shipping_day_id  | integer    | null: false           |
