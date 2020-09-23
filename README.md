@@ -40,7 +40,7 @@
 - has_one :buy
 
 
-## buys テーブル
+## orders テーブル
 
 | Column | Type       | Options               |
 | ------ | ---------- | --------------------- |
@@ -58,11 +58,11 @@
 
 | Column        | Type       | Options              |
 | ------------- | ---------- | -------------------- |
-| buy_id        | integer    | null: false, FK:true |
+| user_id       | integer    | null: false, FK:true |
 | zip_code      | string     | null: false          |
 | prefecture_id | integer    | null: false          |
 | city          | string     | null: false          |
-| address       | string     | null: false          |
+| house_number  | string     | null: false          |
 | building      | string     |                      |
 | telephone     | string     | null: false          |
 
