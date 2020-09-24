@@ -4,7 +4,7 @@ class OrderAddress
 
   attr_accessor :token, :item_id, :zip_code, :prefecture_id, :city, :house_number, :building, :telephone, :user_id, :price
 
-
+  validates :token, presence: true
   validates :item_id, presence: true
   validates :user_id, presence: true
   validates :zip_code, presence: true, format: { with:/\A\d{3}[-]\d{4}\z/, message: '例)123-4567' }
