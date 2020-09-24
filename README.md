@@ -19,7 +19,6 @@
 - has_many :buys dependent: :destroy
 
 
-
 ## items テーブル
 
 | Column           | Type       | Options               |
