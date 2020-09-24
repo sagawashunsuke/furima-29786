@@ -1,12 +1,11 @@
 class OrdersController < ApplicationController
+  before_action :set_item, only: [:index, :create]
 
   def index
-    @item = Item.find(params[:item_id])
     @address = OrderAddress.new
   end
 
   def create
-    @item = Item.find(params[:item_id])
     @address = OrderAddress.new(address_params)
     if @address.valid?
       pay_item
@@ -19,6 +18,10 @@ class OrdersController < ApplicationController
 
 
   private
+
+  def set_item
+    @item = Item.find(params[:item_id])
+  end
 
   def address_params
     @item = Item.find(params[:item_id])

@@ -3,8 +3,6 @@ class Item < ApplicationRecord
   belongs_to :user
   has_one :order
 
-  # @item.order => Order id:3
-  #             => nil
   belongs_to_active_hash :genre
   belongs_to_active_hash :status
   belongs_to_active_hash :delivery_fee
